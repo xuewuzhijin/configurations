@@ -10,23 +10,25 @@
 ```json
 {
 	/* 指定编辑器主题 */
-	"workbench.colorTheme": "One Dark Pro Vivid",
+	"workbench.colorTheme": "Material Theme Lighter",
 	/* 指定编辑器字体 */
 	"editor.fontFamily": "'Fira Code', 'YouYuan',  Consolas, 'Courier New', monospace",
 	/* 编辑器字体大小 */
 	"editor.fontSize": 16,
 	/* 编辑器行高 */
 	"editor.lineHeight": 26,
+	"editor.tabSize": 2,
 	/* 编辑器字体间隔1像素 */
 	"editor.letterSpacing": 1,
 	/* 让编辑器支持连体字 */
 	"editor.fontLigatures": true,
 	/* 编辑器右侧mini地图宽度 */
-	"editor.minimap.maxColumn": 40,
+	"editor.minimap.maxColumn": 80,
 	/* 让编辑器右侧mini地图只渲染色块，而不是字符 */
 	"editor.minimap.renderCharacters": false,
 	/* 让编辑器启动tab补全 */
 	"editor.tabCompletion": "on",
+	"editor.detectIndentation": false,
 	/* JAVA代码注释生成器 */
 	"java.codeGeneration.generateComments": true,
 	/* JAVA的环境变量，这里指向绝对地址，JAVA安装目录 */
@@ -44,6 +46,7 @@
 	],
 	/* 控制在建议列表中如何预先选择建议。 */
 	"editor.suggestSelection": "first",
+		"terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
 	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 	"files.exclude": {
 		"**/.classpath": true,
@@ -56,17 +59,18 @@
 	"vetur.format.defaultFormatter.css": "prettier",
 	"vetur.format.defaultFormatter.js": "vscode-typescript",
 	"vetur.format.defaultFormatter.stylus": "stylus-supremacy",
+	"vetur.validation.template": false,
 	"vetur.format.defaultFormatterOptions": {
 		"wrap_attributes": "force-aligned",
 		"js-beautify-html": {
-		  // force-aligned | force-expand-multiline
-		  "wrap_attributes": "force-aligned"
+			// force-aligned | force-expand-multiline
+			"wrap_attributes": "force-aligned"
 		},
 		"prettyhtml": {
-		  "printWidth": 100,
-		  "singleQuote": false,
-		  "wrapAttributes": false,
-		  "sortAttributes": true
+			"printWidth": 100,
+			"singleQuote": false,
+			"wrapAttributes": false,
+			"sortAttributes": true
 		},
 		"prettier": {
 			"semi": true,
@@ -93,8 +97,8 @@
 		// 函数前用空格
 		"space_before_conditional": true,
 		// 函数名后用空格
-		"space_after_named_function": true,
-		// 
+		"space_after_named_function": false,
+		//
 		"keep_function_indentation": true,
 		// 通过import或components...{}内的插件或组件不换行
 		"brace_style": "collapse,preserve-inline",
@@ -140,7 +144,17 @@
 	},
 	"[json]": {
 		"editor.defaultFormatter": "HookyQR.beautify"
-	}
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[stylus]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "files.autoSave": "off"
 }
 ```
 

@@ -7,49 +7,52 @@
 
 ```json
 {
-    "defaultSeverity": "warning",
-    "extends": [
-        "tslint:recommended"
-    ],
-    "linterOptions": {
-        "exclude": [
-            "node_modules/**"
-        ]
-    },
-    "rules": {
-        "curly": false,
-        "eofline": true,
-        "no-console": false,
-        "member-access": true,
-        "arrow-parens": false,
-        "no-var-keyword": true,
-        "import-spacing": true,
-        "trailing-comma": false,
-        "interface-name": false,
-        "ordered-imports": false,
-        "no-var-requires": false,
-        "space-within-parens": false,
-        "no-unused-expression": false,
-        "no-trailing-whitespace": true,
-        "object-literal-sort-keys": false,
-        "no-consecutive-blank-lines": false,
-        "indent": [
-            true,
-            "tabs",
-            2
-        ],
-        "quotemark": [
-            true,
-            "double"
-        ],
-        "semicolon": [
-            false,
-            "always"
-        ],
-        "comment-format": [
-            true,
-            "check-space"
-        ]
-    }
+	"defaultSeverity": "warning",
+	"extends": [
+		"tslint:recommended"
+	],
+	"linterOptions": {
+		"exclude": [
+			"node_modules/**"
+		]
+	},
+	"rules": {
+		"curly": false,
+		"eofline": true,
+		"whitespace": false,
+		"no-console": false,
+		"member-access": true,
+		"arrow-parens": false,
+		"no-var-keyword": true,
+		"import-spacing": true,
+		"trailing-comma": false,
+		"interface-name": false,
+		"ordered-imports": false,
+		"member-ordering": false,
+		"no-var-requires": false,
+		"space-within-parens": false,
+		"no-unused-expression": false,
+		"no-trailing-whitespace": true,
+		"object-literal-sort-keys": false,
+		"no-consecutive-blank-lines": false,
+		// "space-before-function-paren": true,
+		"indent": [
+			true,
+			"tabs",
+			2
+		],
+		"quotemark": [
+			true,
+			"double"
+		],
+		"semicolon": [
+			false,
+			"always"
+		],
+		"comment-format": [
+			true,
+			"check-space"
+		]
+	}
 }
 ```
