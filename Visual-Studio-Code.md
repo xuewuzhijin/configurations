@@ -9,12 +9,11 @@
 
 ```json
 {
-	/* 指定编辑器主题 */
-	"workbench.colorTheme": "Material Theme Lighter",
-	/* 指定编辑器字体 */
+  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  /* 指定编辑器字体 */
 	"editor.fontFamily": "'Fira Code', 'YouYuan',  Consolas, 'Courier New', monospace",
 	/* 编辑器字体大小 */
-	"editor.fontSize": 16,
+	"editor.fontSize": 14,
 	/* 编辑器行高 */
 	"editor.lineHeight": 26,
 	"editor.tabSize": 2,
@@ -29,25 +28,8 @@
 	/* 让编辑器启动tab补全 */
 	"editor.tabCompletion": "on",
 	"editor.detectIndentation": false,
-	/* JAVA代码注释生成器 */
-	"java.codeGeneration.generateComments": true,
-	/* JAVA的环境变量，这里指向绝对地址，JAVA安装目录 */
-	"java.home": "D:\\Program Files (x86)\\JAVA",
-	/* MAVEN的安装目录 */
-	"maven.executable.path": "D:\\Program Files (x86)\\apache-maven-3.6.1\\bin\\mvn",
-	/* JAVA的MAVEN用户配置 */
-	"java.configuration.maven.userSettings": "D:\\Program Files (x86)\\apache-maven-3.6.1\\conf\\settings.xml",
-	/* MAVEN命令行模式环境变量 */
-	"maven.terminal.customEnv": [
-		{
-			"environmentVariable": "JAVA_HOME",
-			"value": "D:\\Program Files (x86)\\JAVA"
-		}
-	],
 	/* 控制在建议列表中如何预先选择建议。 */
 	"editor.suggestSelection": "first",
-		"terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
-	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 	"files.exclude": {
 		"**/.classpath": true,
 		"**/.project": true,
@@ -55,10 +37,12 @@
 		"**/.factorypath": true
 	},
 	"vetur.completion.autoImport": true,
-	"vetur.format.defaultFormatter.html": "js-beautify-html",
+	"vetur.format.defaultFormatter.html": "prettyhtml",
 	"vetur.format.defaultFormatter.css": "prettier",
-	"vetur.format.defaultFormatter.js": "vscode-typescript",
-	"vetur.format.defaultFormatter.stylus": "stylus-supremacy",
+  "vetur.format.defaultFormatter.js": "prettier",
+  "vetur.format.defaultFormatter.ts": "prettier",
+  "vetur.format.defaultFormatter.stylus": "stylus-supremacy",
+  // 不去验证 template 的标签问题
 	"vetur.validation.template": false,
 	"vetur.format.defaultFormatterOptions": {
 		"wrap_attributes": "force-aligned",
@@ -69,14 +53,40 @@
 		"prettyhtml": {
 			"printWidth": 100,
 			"singleQuote": false,
-			"wrapAttributes": false,
+			"wrapAttributes": true,
 			"sortAttributes": true
-		},
-		"prettier": {
-			"semi": true,
-			"singleQuote": false
-		}
-	},
+    }
+  },
+  // 自定义 .vue 文件的块， <docs></docs> 会以 markdown 去显示
+  "vetur.grammar.customBlocks": {
+    "docs": "md",
+    "i18n": "json"
+  },
+  // 是否加分号
+  "prettier.semi": true,
+  "prettier.useTabs": false,
+  "prettier.tabWidth": 2,
+  "prettier.proseWrap": "never",
+  "prettier.endOfLine": "lf",
+  "prettier.printWidth": 80,
+  "prettier.quoteProps": "as-needed",
+  // 箭头函数如果只有一个参数就去掉括号（avoid）否则一个参数也要括号（always）
+  "prettier.arrowParens": "avoid",
+  "prettier.singleQuote": false,
+  "prettier.insertPragma":  true,
+  "prettier.trailingComma": "es5",
+  // 对象 {} 括号两遍有空间
+  "prettier.bracketSpacing":  true,
+  "prettier.jsxSingleQuote":  false,
+  "prettier.requirePragma": true,
+  // 标签属性的后面的 > 放在最后一个属性后，否则（false） 另起一行。 Vue template 没用
+  "prettier.jsxBracketSameLine": true,
+  "prettier.vueIndentScriptAndStyle": true,
+  "prettier.htmlWhitespaceSensitivity": "strict",
+  // stylus 格式化
+  "stylusSupremacy.insertBraces": false,
+  "stylusSupremacy.insertColons": false,
+  "stylusSupremacy.insertSemicolons": false,
 	/* 格式化代码 */
 	"beautify.config": {
 		// 空格缩进
@@ -129,32 +139,19 @@
 		"html": [
 			"htm",
 			"html"
-		],
-		"java": {
-			"type": "java"
-		}
+		]
 	},
-	/* JavaScript文件默认用 beautify 格式化代码 */
-	"[javascript]": {
-		"editor.defaultFormatter": "HookyQR.beautify"
-	},
-	/* TypeScript同上 */
-	"[typescript]": {
-		"editor.defaultFormatter": "HookyQR.beautify"
-	},
-	"[json]": {
-		"editor.defaultFormatter": "HookyQR.beautify"
-	},
-	"[jsonc]": {
-		"editor.defaultFormatter": "HookyQR.beautify"
-  },
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
-  "[stylus]": {
-    "editor.defaultFormatter": "HookyQR.beautify"
+  "files.autoSave": "off",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "files.autoSave": "off"
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur"
+  },
+  "workbench.iconTheme": "minimalistic-icons",
 }
 ```
 
@@ -208,6 +205,3 @@
 		"description": "Log output to console"
 	}
 ```
-
-
-
