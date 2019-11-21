@@ -7,6 +7,8 @@
 
 ### 配置文件
 
+该配置文件依赖于 VS-Code `Beautify` / `Prettier - Code formatter` 插件，在启用该配置文件前，下载前面所依赖的文件
+
 ```json
 {
   "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
@@ -35,15 +37,28 @@
 		"**/.project": true,
 		"**/.settings": true,
 		"**/.factorypath": true
-	},
+  },
+  // 每行最大字符数(0 = 禁用)。
+  "html.format.wrapLineLength": 480,
+  // 控制是否保留元素前已有的换行符。仅适用于元素前，不适用于标记内或文本。
+  "html.format.preserveNewLines": true,
+  /** 
+  * 对属性进行换行。
+  * aligned-multiple: 当超出折行长度时，将属性进行垂直对齐。
+  * auto: 仅在超出行长度时才对属性进行换行
+  * force: 对除第一个属性外的其他每个属性进行换行。
+  * force-aligned: 对除第一个属性外的其他每个属性进行换行，并保持对齐。
+  * force-expand-multiline: 对每个属性进行换行
+  * preserve: 保留属性的包装
+  * preserve-aligned: 保留属性的包装，但对齐。
+  */
+  "html.format.wrapAttributes": "preserve",
 	"vetur.completion.autoImport": true,
-	"vetur.format.defaultFormatter.html": "prettyhtml",
+	"vetur.format.defaultFormatter.html": "js-beautify-html",
 	"vetur.format.defaultFormatter.css": "prettier",
   "vetur.format.defaultFormatter.js": "prettier",
   "vetur.format.defaultFormatter.ts": "prettier",
   "vetur.format.defaultFormatter.stylus": "stylus-supremacy",
-  // 不去验证 template 的标签问题
-	"vetur.validation.template": false,
 	"vetur.format.defaultFormatterOptions": {
 		"wrap_attributes": "force-aligned",
 		"js-beautify-html": {
@@ -57,7 +72,7 @@
 			"sortAttributes": true
     }
   },
-  // 自定义 .vue 文件的块， <docs></docs> 会以 markdown 去显示
+  // 自定义块
   "vetur.grammar.customBlocks": {
     "docs": "md",
     "i18n": "json"
@@ -97,7 +112,8 @@
 		"indent_with_tabs": true,
 		"css": {
 			"indent_size": 2
-		},
+    },
+    "brace-style": "collapse,preserve-inline",
 		// 函数参数括号内两侧用空格
 		"space_in_paren": true,
 		// 让整个文档最后一个行空出一个空行
@@ -152,6 +168,21 @@
     "editor.defaultFormatter": "octref.vetur"
   },
   "workbench.iconTheme": "minimalistic-icons",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorTheme": "Atom One Dark",
+  "editor.cursorBlinking": "smooth",
+  "window.customMenuBarAltFocus": false,
+  "window.enableMenuBarMnemonics": false,
+  "window.menuBarVisibility": "toggle",
+  "breadcrumbs.icons": false,
+  "workbench.tree.renderIndentGuides": "none",
+  "editor.renderIndentGuides": false,
+  "workbench.tree.indent": 16,
+  "breadcrumbs.enabled": false,
+  "vetur.useWorkspaceDependencies": true,
+  "vetur.validation.template": false,
 }
 ```
 
